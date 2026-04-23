@@ -17,6 +17,18 @@ body {
     background: radial-gradient(circle at top, #111827, #0d1117);
     color: var(--text);
     line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* Progress bar */
+#progressBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--accent);
+    width: 0%;
+    z-index: 999;
 }
 
 header {
@@ -25,6 +37,8 @@ header {
     justify-content: space-between;
     align-items: center;
     backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
 }
 
 header h1 {
@@ -36,10 +50,22 @@ nav a {
     color: var(--muted);
     text-decoration: none;
     transition: 0.3s;
+    position: relative;
 }
 
+nav a.active,
 nav a:hover {
     color: var(--accent);
+}
+
+nav a.active::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent);
 }
 
 section {
@@ -114,8 +140,6 @@ section.visible {
     width: 400px;
     height: 400px;
     background: radial-gradient(circle, rgba(88, 166, 255, 0.15), transparent);
-    top: 20%;
-    left: 20%;
     pointer-events: none;
     filter: blur(80px);
 }

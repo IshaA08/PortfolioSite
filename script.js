@@ -1,4 +1,5 @@
 const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -6,11 +7,36 @@ const observer = new IntersectionObserver((entries) => {
             entry.target.classList.add("visible");
         }
     });
-}, { threshold: 0.1 });
+}, { threshold: 0.3 });
 
 sections.forEach(section => observer.observe(section));
 
-// Mouse glow movement
+// Active nav highlight
+window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+        }
+    });
+
+    // Progress bar
+    const scrollTop = document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (scrollTop / scrollHeight) * 100;
+    document.getElementById("progressBar").style.width = scrolled + "%";
+});
+
+// Glow should follow mouse
 const glow = document.querySelector('.glow');
 document.addEventListener('mousemove', e => {
     glow.style.left = e.clientX - 200 + 'px';
