@@ -246,6 +246,16 @@ section.visible {
     }
 }
 
+#contact .card a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+#contact .card a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
 footer {
     text-align: center;
     padding: 40px;
