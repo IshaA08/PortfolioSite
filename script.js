@@ -69,3 +69,21 @@ function openModal(src) {
 function closeModal() {
     document.getElementById("imgModal").classList.remove("show");
 }
+
+// Hide navbar if at bottom
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", () => {
+    const scrollTop = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
+
+    // Check if near bottom (within 50px)
+    if (scrollTop + windowHeight >= docHeight - 50) {
+        navbar.style.opacity = "0";
+        navbar.style.pointerEvents = "none";
+    } else {
+        navbar.style.opacity = "1";
+        navbar.style.pointerEvents = "auto";
+    }
+});
