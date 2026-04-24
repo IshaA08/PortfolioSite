@@ -42,3 +42,16 @@ document.addEventListener('mousemove', e => {
     glow.style.left = e.clientX - 200 + 'px';
     glow.style.top = e.clientY - 200 + 'px';
 });
+
+// Modal
+function openModal(src) {
+    const modal = document.getElementById("imgModal");
+    const modalImg = document.getElementById("modalImg");
+
+    modalImg.src = src;
+    modal.classList.add("show");
+}
+
+function closeModal() {
+    document.getElementById("imgModal").classList.remove("show");
+}

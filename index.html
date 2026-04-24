@@ -28,7 +28,7 @@
     </header>
 
     <section class="hero visible">
-        <h2>Hi, I'm <span>Isha Afzaal</span></h2>
+        <h2>Hi, I'm <span>Isha Afzaal</span>.</h2>
         <p class="typing">Full-stack developer focused on building scalable web apps and digital products.</p>
     </section>
 
@@ -52,9 +52,10 @@
                     <li>Improved efficiency by reducing manual data entry</li>
                 </ul>
 
-                <img src="images/project-1-diagram.png" alt="ABBYY Vantage Workflow Diagram" />
+                <img src="images/project-1-diagram.png" alt="ABBYY Vantage Workflow Diagram"
+                    onclick="openModal(this.src)" />
 
-                <div class="tags">
+                <div class=" tags">
                     <span class="tag">OCR</span>
                     <span class="tag">Automation</span>
                     <span class="tag">AI</span>
@@ -65,13 +66,13 @@
                 </div>
             </div>
             <div class="card">
-                <p>Twenty2020: Anti-eye strain in-browser tool</p>
+                <p>Twenty2020: Anti-Eye Strain In-Browser Tool</p>
                 <ul>
                     <li>Built a lightweight web-based productivity tool to help mitigate eye strain</li>
                     <li>Implemented frontend UI and backend logic for data handling</li>
                     <li>Focused on usability and simple, clean and responsive design</li>
                 </ul>
-                <img src="images/app-preview.gif" alt="Productivity App Preview" />
+                <img src="images/app-preview.gif" alt="Productivity App Preview" onclick="openModal(this.src)" />
                 <div class="tags">
                     <span class="tag">Bootstrap</span>
                     <span class="tag">JavaScript</span>
@@ -90,7 +91,8 @@
                     <li>Contributed to improving dataset quality for multimodal systems</li>
                     <li>Gained experience with data pipelines and AI workflows</li>
                 </ul>
-                <img src="images/project-3-diagram.png" alt="Data Annotation Workflow Diagram" />
+                <img src="images/project-3-diagram.png" alt="Data Annotation Workflow Diagram"
+                    onclick="openModal(this.src)" />
                 <div class="tags">
                     <span class="tag">AI</span>
                     <span class="tag">Data</span>
@@ -125,6 +127,10 @@
             <p>Email: Isha_Afzaal8@outlook.com</p>
         </div>
     </section>
+
+    <div id="imgModal" class="modal" onclick="closeModal()">
+        <img id="modalImg" />
+    </div>
 
     <footer>
         <p>© 2026 Isha Afzaal</p>
