@@ -43,6 +43,20 @@ document.addEventListener('mousemove', e => {
     glow.style.top = e.clientY - 200 + 'px';
 });
 
+// Hide logo if not in hero section
+const hero = document.querySelector('.hero');
+const logo = document.getElementById('logo');
+
+window.addEventListener('scroll', () => {
+    const heroBottom = hero.offsetTop + hero.offsetHeight;
+
+    if (window.scrollY > heroBottom - 100) {
+        logo.classList.add('hidden');
+    } else {
+        logo.classList.remove('hidden');
+    }
+});
+
 // Modal
 function openModal(src) {
     const modal = document.getElementById("imgModal");

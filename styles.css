@@ -68,6 +68,16 @@ nav a.active::after {
     background: var(--accent);
 }
 
+#logo {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#logo.hidden {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+}
+
 section {
     padding: 80px 10%;
     opacity: 0;
